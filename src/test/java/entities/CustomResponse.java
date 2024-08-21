@@ -28,7 +28,8 @@ public class CustomResponse {
     private int status;
     List<CustomResponse> company;
 
-    private String region;
+    private Region region;
+//    private int region;
 
 
 
