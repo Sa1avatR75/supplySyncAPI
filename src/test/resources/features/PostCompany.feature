@@ -1,4 +1,4 @@
-@RuslanFeature
+@RuslanFeature @PostCompany
   Feature: Companies Functionalities
     As an API consumer
     I want to create companies using the API
