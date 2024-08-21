@@ -59,7 +59,7 @@ public class RegionSteps {
     @When("I provide id {int} and updated {string}")
     public void i_provide_id_and_updated(Integer id, String updatedRegion) {
         updatedRegion = faker.address().city();
-        requestBody.setId(customResponse.getId());
+        requestBody.setId(Integer.valueOf(customResponse.getId()));
         requestBody.setRegion(updatedRegion);
         request = request.contentType(ContentType.JSON).body(requestBody);
 

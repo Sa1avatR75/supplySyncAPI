@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomResponse {
-
+    private String id;
     private boolean blocked;
     private String logo;
     private String name;
@@ -19,7 +19,7 @@ public class CustomResponse {
 
 
 //    Abduvohid
-private int id;
+
 private String region;
 
 
