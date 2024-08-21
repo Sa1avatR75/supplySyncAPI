@@ -224,4 +224,21 @@ public class CompanySteps {
 
 
 
+
+    @When("I send a GET request to retrieve all companies")
+    public void i_send_a_get_request_to_retrieve_all_companies() {
+        response = request.get("/api/v1/company");
+        response.prettyPrint();
+    }
+    @Then("the response should contain a list of companies")
+    public void the_response_should_contain_a_list_of_companies() {
+
+    }
+    @Then("each company in the list should have a {string}, {string}, {string}, {string}, and {string}")
+    public void each_company_in_the_list_should_have_a_and(String string, String string2, String string3, String string4, String string5) {
+
+    }
+
+
+
 }
