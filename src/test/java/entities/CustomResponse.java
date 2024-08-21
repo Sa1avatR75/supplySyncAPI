@@ -24,7 +24,8 @@ public class CustomResponse {
     private int companyId;
     private int status;
 
-    private String region;
+    private Region region;
+//    private int region;
 
 
 

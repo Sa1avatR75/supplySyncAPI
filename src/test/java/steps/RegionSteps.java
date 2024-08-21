@@ -46,8 +46,8 @@ public class RegionSteps {
         response = request.post(endPoint);
         customResponse = mapper.readValue(response.asString(), CustomResponse.class);
         response.prettyPrint();
-        regionToCheck = customResponse.getRegion();
-        idToDelete = Integer.valueOf(customResponse.getId());
+//        regionToCheck = customResponse.getRegion();
+//        idToDelete = Integer.valueOf(customResponse.getId());
 
     }
 
@@ -110,6 +110,8 @@ public class RegionSteps {
 
         Assert.assertTrue(doesContain);
     }
+
+
 
 
 }
