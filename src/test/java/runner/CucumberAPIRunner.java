@@ -8,8 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"html:target/cucumberReport.html", "json:target/testReport.json"},
         glue = "steps",
-        features = "src/test/resources/features",
-        tags = "@GetBranch"
-)
+        features = "src/test/resources/features"
 public class CucumberAPIRunner {
 }
