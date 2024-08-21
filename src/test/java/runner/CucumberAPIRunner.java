@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         features = "src/test/resources/features",
         tags = "@AbduvohidFeature",
-        dryRun = true
+        dryRun = false
 )
 public class CucumberAPIRunner {
 }

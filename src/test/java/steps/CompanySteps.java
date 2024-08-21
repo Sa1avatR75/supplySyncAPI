@@ -104,7 +104,7 @@ public class CompanySteps {
     }
     @Then("the response should contain a id field")
     public void the_response_should_contain_a_id_field() {
-    Assert.assertTrue(!customResponse.getId().isEmpty());
+    Assert.assertTrue(customResponse.getId() != 0);
     }
     @Given("I do not have a valid authentication token")
     public void i_do_not_have_a_valid_authentication_token() {
