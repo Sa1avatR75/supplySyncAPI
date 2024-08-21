@@ -18,9 +18,12 @@ public class CustomResponse {
     private int status;
 
 
-//    Abduvohid
 
-private String region;
+
+
+
+
+    private String region;
 
 
 

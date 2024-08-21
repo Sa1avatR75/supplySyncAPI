@@ -13,7 +13,7 @@ public class RequestBody {
 
 
 
-//    Abduvohid
+
     private int id;
     private String region;
 
