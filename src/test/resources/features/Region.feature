@@ -24,7 +24,7 @@ Feature: Region API functionalities
     Given base url for SupplySync backend
     When I provide valid authorization token
     And I provide valid id and region as a request body
-    And I hit POST endpoint "/api/v1/regions"
+    And I hit POST endpoint "/api/v1/regions" to create region
     Then I verify the status code is 200
     Then I hit GET endpoint "/api/v1/regions" to get list of regions
     Then I verify the status code is 200
