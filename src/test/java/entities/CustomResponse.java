@@ -2,6 +2,9 @@ package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import org.checkerframework.checker.units.qual.C;
+
+import java.util.List;
 
 import java.util.List;
 
@@ -23,8 +26,10 @@ public class CustomResponse {
     private int regionId;
     private int companyId;
     private int status;
+    List<CustomResponse> company;
 
-    private String region;
+    private Region region;
+//    private int region;
 
 
 

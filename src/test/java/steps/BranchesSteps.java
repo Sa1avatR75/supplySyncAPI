@@ -3,6 +3,7 @@ package steps;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entities.CustomResponse;
+import entities.Region;
 import entities.RequestBody;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -45,7 +46,7 @@ public class BranchesSteps {
     @When("I hit GET endpoint {string}")
     public void i_hit_get_endpoint(String endpoint) {
         response = request.get(endpoint);
-
+        response.prettyPrint();
     }
     @Then("I should receive a {int} OK status code")
     public void i_should_receive_a_ok_status_code(Integer expectedStatusCode) {
@@ -76,7 +77,7 @@ public class BranchesSteps {
         request.contentType(ContentType.JSON).body(requestBody);
 
     }
-    @When("I hit POST endpoint {string}")
+    @When("I hit POST branch endpoint {string}")
     public void i_hit_post_endpoint(String endpoint) throws JsonProcessingException {
         response = request.post(endpoint);
         customResponse = mapper.readValue(response.asString(), CustomResponse.class);
@@ -177,5 +178,43 @@ public class BranchesSteps {
         response = request.delete(endpoint + int1);
         response.prettyPrint();
     }
+
+
+
+
+    @When("I hit GET endpoint {string} with id {int}")
+    public void i_hit_get_endpoint_with_id(String endpoint, Integer branch_id) throws JsonProcessingException {
+        response = request.get(endpoint + branch_id);
+        customResponse = mapper.readValue(response.asString(), CustomResponse.class);
+
+    }
+    @Then("status of branch should be false")
+    public void status_of_branch_should_be_false() {
+     Assert.assertFalse( customResponse.isBlock());
+    }
+    @Then("I hit PUT branch endpoint {string} with id {int}")
+    public void i_hit_put_branch_endpoint(String endpoint, Integer branch) throws JsonProcessingException {
+        response = request.put(endpoint + branch);
+        customResponse =  mapper.readValue(response.asString(), CustomResponse.class);
+
+    }
+
+    @Then("the response should contains the block  is true")
+    public void the_response_should_contains_the_block_is_true() {
+        Assert.assertTrue( customResponse.isBlock());
+    }
+
+
+    @Then("status of branch should be true")
+    public void status_of_branch_should_be_true() {
+        Assert.assertTrue( customResponse.isBlock());
+    }
+
+    @Then("the response should contains the block false")
+    public void the_response_should_contains_the_block_false() {
+        Assert.assertFalse(customResponse.isBlock());
+
+    }
+
 
 }
